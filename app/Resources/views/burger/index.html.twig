@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Burgers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Thumbnail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for burger in burgers %}
+            <tr>
+                <td><a href="{{ path('burger_show', { 'id': burger.id }) }}">{{ burger.id }}</a></td>
+                <td>{{ burger.name }}</td>
+                <td>{{ burger.description }}</td>
+                <td>{{ burger.price }}</td>
+                <td>{{ burger.thumbnail }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('burger_show', { 'id': burger.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('burger_edit', { 'id': burger.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('burger_new') }}">Create a new burger</a>
+        </li>
+    </ul>
+{% endblock %}

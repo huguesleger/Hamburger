@@ -5,9 +5,12 @@
         <title>{% block title %}Burger&Co{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap.min.css')}}"/>
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <script type="text/javascript" src="{{asset('vendor/jquery.min.js')}}"></script>
+        {% endblock %}
     </body>
 </html>
