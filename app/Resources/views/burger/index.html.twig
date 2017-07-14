@@ -22,6 +22,9 @@
                 <td>{{ burger.description }}</td>
                 <td>{{ burger.price }}</td>
                 <td>{{ burger.thumbnail }}</td>
+                {% for burger in burger.ingredient %}
+                    <td>{{ burger.name }}</td>
+                    {% endfor %}
                 <td>
                     <ul>
                         <li>

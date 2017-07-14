@@ -7,14 +7,19 @@
 
     <div class="input-group col-md-12"><label>Name</label>{{form_widget(formBurger.name,{'attr':{'class':('form-control')}})}}</div> 
     <div class="input-group col-md-12"><label>Description</label>{{form_widget(formBurger.description,{'attr':{'class':('form-control')}})}}</div>
+    {#<div class="input-group col-md-12"><label>Ingredient</label>{{form_widget(formBurger.ingredient,{'attr':{'class':('form-control')}})}}</div>#}
     <div class="input-group col-md-12"><label>Image</label>{{form_widget(formBurger.thumbnail,{'attr':{'class':('form-control')}})}}</div>
     <div class="input-group col-md-12"><label id="LabelPrice">Price</label>{{form_widget(formBurger.price,{'attr':{'class':('form-control')}})}}</div>
+    
 
-        
+         <div class="input-group">{{form_widget(formBurger.publish,{'attr':{'class':('form-group ')}})}}</div>
         
         <input type="submit" value="Create" />
+       
     {{ form_end(formBurger) }}
-
+    
+     {{ form_row(formBurger.ingredient) }}
+            <a href="#" id="add_category" class="btn btn-default">Ajouter une catégorie</a>
     <ul>
         <li>
             <a href="{{ path('burger_index') }}">Back to the list</a>

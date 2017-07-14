@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * Burger
@@ -49,7 +50,46 @@ class Burger
      */
     private $thumbnail;
 
+    
+    /**
+     *
+     * @var bool
+     * @ORM\Column(name="publish", type="boolean")
+     */
+    private $publish;
+    
+    
+    /**
+     *
+     * @var array
+     * @ORM\ManyToMany(targetEntity = "Ingredient", cascade={"persist", "remove"})
+     * @JoinTable(name="ingredient_list")
+     */
+    private $ingredient;
+    
+    
+     /**
+     * Get ingredient
+     *
+     * @return string
+     */
+    public function getIngredient() {
+        return $this->ingredient;
+    }
 
+    
+    /**
+     * Set ingredient
+     *
+     * @param string $ingredient
+     *
+     * @return Burger
+     */
+    public function setIngredient($ingredient) {
+        $this->ingredient = $ingredient;
+    }
+
+    
     /**
      * Get id
      *
@@ -154,6 +194,34 @@ class Burger
     public function getThumbnail()
     {
         return $this->thumbnail;
+    }
+    
+    /**
+     * Set publish
+     *
+     * @param boolean $publish
+     *
+     * @return Burger
+     */
+    public function setPublish($publish)
+    {
+        $this->publish = $publish;
+
+        return $this;
+    }
+    
+    /**
+     * Get publish
+     *
+     * @return bool
+     */
+    public function getPublish()
+    {
+        return $this->publish;
+    }
+    
+      public function __toString() {
+        return $this->getName();
     }
 }
 
