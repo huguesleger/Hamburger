@@ -53,7 +53,7 @@ class BurgerController extends Controller
 
         return $this->render('burger/new.html.twig', array(
             'burger' => $burger,
-            'form' => $form->createView(),
+            'formBurger' => $form->createView(),
         ));
     }
 

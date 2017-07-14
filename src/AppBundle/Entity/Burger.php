@@ -38,7 +38,7 @@ class Burger
     /**
      * @var int
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="decimal", precision=10, scale=2, nullable= true)
      */
     private $price;
 
@@ -111,7 +111,7 @@ class Burger
     /**
      * Set price
      *
-     * @param integer $price
+     * @param string $price
      *
      * @return Burger
      */

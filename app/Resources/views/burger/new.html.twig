@@ -3,14 +3,24 @@
 {% block body %}
     <h1>Burger creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
+    {{ form_start(formBurger) }}
+
+    <div class="input-group col-md-12"><label>Name</label>{{form_widget(formBurger.name,{'attr':{'class':('form-control')}})}}</div> 
+    <div class="input-group col-md-12"><label>Description</label>{{form_widget(formBurger.description,{'attr':{'class':('form-control')}})}}</div>
+    <div class="input-group col-md-12"><label>Image</label>{{form_widget(formBurger.thumbnail,{'attr':{'class':('form-control')}})}}</div>
+    <div class="input-group col-md-12"><label id="LabelPrice">Price</label>{{form_widget(formBurger.price,{'attr':{'class':('form-control')}})}}</div>
+
+        
+        
         <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {{ form_end(formBurger) }}
 
     <ul>
         <li>
             <a href="{{ path('burger_index') }}">Back to the list</a>
+        </li>
+        <li>
+        <a class="btn btn-primary" id="BtnPrice" href="#">Ajouter Price</a>
         </li>
     </ul>
 {% endblock %}

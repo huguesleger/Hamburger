@@ -13,7 +13,12 @@ class BurgerType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('description')->add('price')->add('thumbnail');
+        $builder->add('name')
+                ->add('description') 
+                ->add('thumbnail')
+                ->add('price',null, array(
+                    'required'=> false)) 
+                ;
     }
     
     /**
