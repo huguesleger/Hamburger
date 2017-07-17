@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends ':admin:templateAdmin.html.twig' %}
 
-{% block body %}
+     {% block content %}
     <h1>Burger</h1>
 
     <table>
@@ -25,6 +25,14 @@
                 <th>Thumbnail</th>
                 <td>{{ burger.thumbnail }}</td>
             </tr>
+              <tr>
+                   {% for burger in burger.ingredient %}
+                <th>Ingredient</th>
+               
+                <td>{{ burger.name }}</td>
+                
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 

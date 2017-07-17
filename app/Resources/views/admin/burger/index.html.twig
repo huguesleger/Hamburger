@@ -1,6 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends ':admin:templateAdmin.html.twig' %}
 
-{% block body %}
+    {% block headerBreadcrumb %}
+         <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        General Form Elements
+        <small>Preview</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Forms</a></li>
+        <li class="active">General Elements</li>
+      </ol>
+    </section>
+    {% endblock %}
+
+
+     {% block content %}
     <h1>Burgers list</h1>
 
     <table>
@@ -21,7 +37,9 @@
                 <td>{{ burger.name }}</td>
                 <td>{{ burger.description }}</td>
                 <td>{{ burger.price }}</td>
-                <td>{{ burger.thumbnail }}</td>
+                <div class="col-md-2">
+                <img src="{{asset('uploads/img/')~burger.thumbnail}}" class="img-responsive"/>
+                </div>
                 {% for burger in burger.ingredient %}
                     <td>{{ burger.name }}</td>
                     {% endfor %}
@@ -46,3 +64,4 @@
         </li>
     </ul>
 {% endblock %}
+

@@ -16,8 +16,23 @@ and open the template in the editor.
     display: none;
 }
 
-
-
 .visible {
  display: inherit !important;   
+}
+
+//////////////////////
+//////////////////////
+
+/*------------overide-template-admin------------*/
+
+.form-control {
+resize: none;
+}
+
+.checkbox label, .radio label {
+    padding-left: 0px;
+}
+
+#blah {
+    display: none;
 }

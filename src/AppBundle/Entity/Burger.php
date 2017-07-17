@@ -4,6 +4,9 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinTable;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints\File;
+
 
 /**
  * Burger
@@ -44,9 +47,10 @@ class Burger
     private $price;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
-     * @ORM\Column(name="thumbnail", type="string", length=255)
+     * @ORM\Column(name="thumbnail", type="string", length= 255, nullable=true)
+     * @File(mimeTypes={"image/jpeg","image/png"})
      */
     private $thumbnail;
 
@@ -67,7 +71,9 @@ class Burger
      */
     private $ingredient;
     
-    
+   
+
+        
      /**
      * Get ingredient
      *

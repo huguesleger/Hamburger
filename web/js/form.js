@@ -16,7 +16,7 @@ $('#BtnPrice').click(function(){
 /////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
-
+//----------ajout champs ingredient----------///
 
     var $container = $('div#appbundle_burger_ingredient');
     var index = $container.find(':input').length;
@@ -64,6 +64,39 @@ $('#BtnPrice').click(function(){
       });
     }
 
+/////////////////////////////////////////////////////
+////////////////////////////////////////////////////
 
+
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    });
     
+    /////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
+
+
+
+ function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                
+                $('#blah').attr('src', e.target.result);
+                $('#blah').show();
+                
+            };
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#appbundle_burger_thumbnail").change(function(){
+        readURL(this);
+        
+    });
+       
 });

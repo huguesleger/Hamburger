@@ -10,12 +10,14 @@
          <link rel="stylesheet" type="text/css" href="{{asset('vendor/AdminLte/bower_components/font-awesome/css/font-awesome.min.css')}}"/>
          <link rel="stylesheet" type="text/css" href="{{asset('vendor/AdminLte/bower_components/Ionicons/css/ionicons.min.css')}}"/>
          <link rel="stylesheet" type="text/css" href="{{asset('vendor/AdminLte/dist/css/AdminLTE.min.css')}}"/>
-         <link rel="stylesheet" type="text/css" href="{{asset('vendor/AdminLte/dist/css/skins/skin-blue.min.css')}}"/>
+         <link rel="stylesheet" type="text/css" href="{{asset('vendor/AdminLte/dist/css/skins/skin-red.min.css')}}"/>
+         <link rel="stylesheet" type="text/css" href="{{asset('vendor/AdminLte/plugins/iCheck/all.css')}}"/>
+         <link rel="stylesheet" type="text/css" href="{{asset('css/news_css/main.css')}}"/>
          <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
          {% endblock %}
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-red sidebar-mini">
         {% block body %}
              {% block backoffice %}{% endblock %}
         {% endblock %}
@@ -23,8 +25,12 @@
         {% block javascripts %}
         <script type="text/javascript" src="{{asset('vendor/AdminLte/bower_components/jquery/dist/jquery.min.js')}}"></script>
          <script type="text/javascript" src="{{asset('vendor/AdminLte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-          <script type="text/javascript" src="{{asset('vendor/AdminLte/dist/js/adminlte.min.js')}}"></script>
+          <script type="text/javascript" src="{{asset('vendor/AdminLte/plugins/iCheck/icheck.min.js')}}"></script>
+            <script type="text/javascript" src="{{asset('vendor/AdminLte/dist/js/adminlte.min.js')}}"></script>
+         
         {% endblock %}
+        {% block scriptForm %}
+             {% endblock %}
     </body>
 </html>
 
